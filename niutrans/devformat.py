@@ -11,11 +11,11 @@ parser.add_argument('output_file')
 
 args = parser.parse_args()
 
-content_srctok = codecs.open(args.input_src_tok_file, 'r', 'utf-8').read()
-content_trgtok0 = codecs.open(args.input_trg_tok_file_0, 'r', 'utf-8').read()
-content_trgtok1 = codecs.open(args.input_trg_tok_file_1, 'r', 'utf-8').read()
-content_trgtok2 = codecs.open(args.input_trg_tok_file_2, 'r', 'utf-8').read()
-content_trgtok3 = codecs.open(args.input_trg_tok_file_3, 'r', 'utf-8').read()
+content_srctok = codecs.open(args.input_src_file, 'r', 'utf-8').read()
+content_trgtok0 = codecs.open(args.input_trg_file_0, 'r', 'utf-8').read()
+content_trgtok1 = codecs.open(args.input_trg_file_1, 'r', 'utf-8').read()
+content_trgtok2 = codecs.open(args.input_trg_file_2, 'r', 'utf-8').read()
+content_trgtok3 = codecs.open(args.input_trg_file_3, 'r', 'utf-8').read()
 
 sentences_srctok = content_srctok.split('\n')[0:-1]
 sentences_trgtok0 = content_trgtok0.split('\n')[0:-1]
