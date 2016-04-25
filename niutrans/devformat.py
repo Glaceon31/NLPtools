@@ -28,7 +28,7 @@ print len(sentences_srctok),'lines totoal'
 outputsentences = []
 
 for sentence_srctok, sentence_trgtok0, sentence_trgtok1, sentence_trgtok2, sentence_trgtok3 in zip(sentences_srctok, sentences_trgtok0, sentences_trgtok1, sentences_trgtok2, sentences_trgtok3):
-	outputsentences.append(sentence_srctok+'\n\n'+sentence_trgtok0+sentence_trgtok1+sentence_trgtok2+sentence_trgtok3)
+	outputsentences.append(sentence_srctok+'\n\n'+sentence_trgtok0+'\n'+sentence_trgtok1+'\n'+sentence_trgtok2+'\n'+sentence_trgtok3+'\n')
 
 output = codecs.open(args.output_file, 'w', 'utf-8')
 output.write('\n'.join(outputsentences)+'\n')
