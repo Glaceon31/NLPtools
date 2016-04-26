@@ -12,7 +12,7 @@ args = parser.parse_args()
 ref_num = args.ref_num
 content = codecs.open(args.input_file, 'r', 'utf-8').read()
 
-segre = re.compile('> (.*?)</seg>')
+segre = re.compile('> ?(.*?)</seg>')
 sentences = segre.findall(content)
 
 print len(sentences)
