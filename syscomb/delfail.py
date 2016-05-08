@@ -18,7 +18,7 @@ for i in xrange(len(args.input_file)):
 	assert len(sentences[i]) == len(sentences[0])
 	outputsentences.append([])
 
-print sentences
+#print sentences
 for i in xrange(len(sentences[i])):
 	nofail = True
 	for j in xrange(len(args.input_file)):
