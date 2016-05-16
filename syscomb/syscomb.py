@@ -22,7 +22,11 @@ outputsentences = []
 for i in xrange(len(sentences[i])):
 	inputs = ''
 	for j in xrange(len(args.input_file)):
-		inputs += sentences[j][i] + ' '+args.split_sym+' '
+		tmp = sentences[j][i]
+		print tmp[-1] == ' '
+		while tmp[-1] == u' ':
+			tmp = tmp[:-1]
+		inputs += tmp + ' '+args.split_sym+' '
 	outputsentences.append(inputs)
 
 output = codecs.open(args.output_file, 'w', 'utf-8')
