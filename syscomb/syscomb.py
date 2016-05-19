@@ -23,9 +23,10 @@ for i in xrange(len(sentences[i])):
 	inputs = ''
 	for j in xrange(len(args.input_file)):
 		tmp = sentences[j][i]
-		print tmp[-1] == ' '
-		while tmp[-1] == u' ':
-			tmp = tmp[:-1]
+		#print tmp[-1] == ' '
+		if tmp != '':
+			while tmp[-1] == u' ':
+				tmp = tmp[:-1]
 		inputs += tmp + ' '+args.split_sym+' '
 	outputsentences.append(inputs)
 
