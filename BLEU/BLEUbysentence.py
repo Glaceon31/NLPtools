@@ -31,7 +31,7 @@ try:
 	os.mkdir('bleubysentence')
 except:
 	pass
-print len(trans[i])
+print len(trans[0])
 for i in xrange(len(trans[i])):
 	cmd = 'perl multi-bleu.perl -lc '
 	for j in xrange(len(args.ref)):
