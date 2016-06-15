@@ -53,7 +53,10 @@ for i in xrange(len(trans[0])):
 		st = a.read()
 		result = st[st.find('=')+2:st.find(',')]
 		print result,
-		results.append(string.atof(result))
+		try:
+			results.append(string.atof(result))
+		except:
+			results.append(0.)
 	print 
 	if results[-1] > max(results[0:-1]):
 		best += 1
