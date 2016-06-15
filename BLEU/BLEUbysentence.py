@@ -32,6 +32,11 @@ try:
 except:
 	pass
 print len(trans[0])
+best = 0
+bestmiddle = 0
+worst = 0
+worstmiddle = 0
+middle = 0
 for i in xrange(len(trans[0])):
 	cmd = 'perl multi-bleu.perl -lc '
 	for j in xrange(len(args.ref)):
@@ -39,6 +44,7 @@ for i in xrange(len(trans[0])):
 		output.write(refs[j][i]+'\n')
 		output.close()
 		cmd += 'bleubysentence/'+str(i)+'_'+str(j)+'.ref '
+	results = []
 	for j in xrange(len(args.translate)):
 		output = codecs.open('bleubysentence/'+str(i)+'_'+str(j)+'.tr', 'w', 'utf-8')
 		output.write(trans[j][i]+'\n')
@@ -47,7 +53,20 @@ for i in xrange(len(trans[0])):
 		st = a.read()
 		result = st[st.find('=')+2:st.find(',')]
 		print result,
-	print 
+		results.append(string.atof(result))
+		print 
+	if results[-1] > max(results[0:-1]):
+		best += 1
+	elif results[-1] == max(results[0:-1]):
+		bestmiddle += 1
+	elif results[-1] < max(results[0:-1]) and results[-1] > min(results[0:-1]):
+		middle += 1
+	elif results[-1] == min(results[0:-1]):
+		worstmiddle += 1
+	elif results[-1] < min(results[0:-1]):
+		worst += 1
+
+print worst, worstmiddle, middle, bestmiddle, best
 
 	
 
