@@ -32,7 +32,7 @@ try:
 except:
 	pass
 print len(trans[0])
-for i in xrange(len(trans[i])):
+for i in xrange(len(trans[0])):
 	cmd = 'perl multi-bleu.perl -lc '
 	for j in xrange(len(args.ref)):
 		output = codecs.open('bleubysentence/'+str(i)+'_'+str(j)+'.ref', 'w', 'utf-8')
