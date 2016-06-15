@@ -54,7 +54,7 @@ for i in xrange(len(trans[0])):
 		result = st[st.find('=')+2:st.find(',')]
 		print result,
 		results.append(string.atof(result))
-		print 
+	print 
 	if results[-1] > max(results[0:-1]):
 		best += 1
 	elif results[-1] == max(results[0:-1]):
