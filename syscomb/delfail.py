@@ -22,7 +22,7 @@ for i in xrange(len(args.input_file)):
 for i in xrange(len(sentences[i])):
 	nofail = True
 	for j in xrange(len(args.input_file)):
-		if sentences[j][i] == 'FAIL':
+		if sentences[j][i] == 'FAIL' or sentences[j][i].replace(' ','') == '':
 			nofail = False
 	if nofail:
 		for j in xrange(len(args.input_file)):
